@@ -15,7 +15,6 @@ advice = [
     "Tired of boiling water every night? Heat 10 liters of water, place them on empty soda plastic bottles and freeze for future use.",
     "Having a bad day? Wear sunglasses. Now you’re having a bad evening.",
     "Don’t have flashlight on your phone? Take a photo of the sun and use that to find your way in the dark.",
-    "Aaryan is the best.", "🍗 Chicken is Yum"
+    "Aaryan is the best.", 
+    "🍗 Chicken is Yum"
 ]
-
-output = (f"```{random.choice(advice)}```")

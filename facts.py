@@ -73,6 +73,20 @@ general = [
 history = [
     "The very first bomb dropped by the Allies on Berlin during World War II Killed the only elephant in the Berlin Zoo.",
     "The shortest war in history was between Zanzibar and Englandin 1896. Zanzibar surrendered after 38 minutes.",
+    "In ancient Egypt, servants were smeared with honey to attract flies away from the pharaoh.",
+    "Roman Catholics in Bavaria founded a secret society in 1740 called the Order of the Pug. New members had to wear dog collars and scratch at the door to get in.",
+    "Henry VIII of England had people who were called 'Grooms of Stool' whose job it was to wipe his bottom. During his reign, he had four such people, all of whom were knighted.",
+    "Before Abraham Lincoln became a politician, he was a champion wrestler. With more than 300 bouts under his belt, Lincoln only lost one match in his career and was inducted into the National Wrestling Hall Of Fame in 1992.",
+    "Until the early 20th century in Mongolia, criminals could be locked up in a wooden box as punishment, sometimes left to die of starvation.",
+    "In 1923, jockey Frank Hayes won a race at Belmont Park in New York despite being dead. He suffered a heart attack mid-race, but his body stayed in the saddle until his horse crossed the line for a 20-1 outsider victory.",
+    "All British tanks since 1945 have included equipment to make tea."
+    "Hitler, Mussolini, and Stalin were all nominated for the Nobel Peace Prize.",
+    "Roman Emperor Gaius, also known as Caligula, made one of his favorite horses a senator.",
+    "The town of Salem, New Jersey once held a trial against tomatoes in 1820 because of the widespread belief they were poisonous. The case ended after Colonel Robert Gibbon Johnson ate a basket of tomatoes without ill consequence.",
+    "In 1942, the U.S. Army fired 1,400 anti-aircraft rounds during what was thought to be a Japanese air raid over Los Angeles County. It turned out to be a false alarm. Five civilians died as an indirect result.",
+    "In 1493, Columbus thought he saw mermaids -- they were 'not as pretty as they are depicted, for somehow in the face they look like men.' It's suspected he saw a manatee."
+    "Chickens may have been first domesticated by humans for cockfighting, not for food.",
+    "During the 1800s in the United States, it was considered a cruel and unusual punishment to feed lobster to prisoners and convicts."
 ]
 
 math = [
@@ -87,22 +101,46 @@ math = [
     "From 0 to 1,000, the letter \"A\" only appears in 1,000 (\"one thousand\").",
     "'FOUR' is the only number in the English language that is spelt with the same number of letters as the number itself.",
     "A circle has the largest area of any shape with the same perimeter.",
-    "A circle has the shortest perimeter of any shape with the same area.", ""
+    "A circle has the shortest perimeter of any shape with the same area."
+]
+
+science = [
+    "Babies have abound 100 more bones than adults.", 
+    "The Eiffel Tower can be 15 cm taller during the summer.",
+    "20% of Earth’s oxygen is produced by the Amazon rainforest.",
+    "Some metals are so reactive that they explode on contact with water.",
+    "A teaspoonful of neutron star would weigh 6 billion tons.",
+    "Hawaii moves 7.5cm closer to Alaska every year.",
+    "Chalk is made from trillions of microscopic plankton fossils.",
+    "In 2.3 billion years it will be too hot for life to exist on Earth.",
+    "Polar bears are nearly undetectable by infrared cameras.",
+    "It takes 8 minutes, 19 seconds for light to travel from the Sun to the Earth.",
+    "If you took out all the empty space in our atoms, the human race could fit in the volume of a sugar cube.",
+    "Stomach acid is strong enough to dissolve stainless steel.",
+    "The Earth is a giant magnet.",
+    "Venus is the only planet to spin clockwise.",
+    "A flea can accelerate faster than any Space Shuttle."
+    "Camels don't actually store water in their humps."
+    "Salamanders can extend their tongues a long way.",
+    "Space is completely silent.",
+    "Neutron stars can spin 600 times per second."
 ]
 
 
 def output(message):
+    response = "Enter in a valid argument. Examples: !fact history, !fact math, !fact general, !fact science, etc."
     if message.content == "!fact":
-        error_response = "Enter in a valid argument. Examples: !fact history, !fact math, !fact general, etc."
-        return (f"```{error_response}```")
+        return (f"```{response}```")
     elif "!fact " in message.content:
-        fact_type = message.content.split(' ')[1]
+        fact_type = message.content.split(' ')[1].lower()
         if fact_type == "general":
             response = random.choice(general)
         elif fact_type == "history":
             response = random.choice(history)
         elif fact_type == "math":
             response = random.choice(math)
+        elif fact_type == "science":
+            response = random.choice(science)
         return (f"```{response}```")
     else:
         return "```Maybe you're trying to type !fact?```"

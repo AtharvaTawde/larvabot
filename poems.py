@@ -23,9 +23,7 @@ poems = {
     "The people dressed in simple clothes\nWalked to the house\nMade of simple straw\nWith pitchforks in hand\n\nThey charged at the door\nAnd broke the measly\nwooden structure\nThey walked inside\nAnd searched the house of its goods\n\nAnd when the owner arrived\nHe stood there in shock\nSeeing the house intact\nAll but the door"
 }
 
-output = (f'''
-    ```
-    \nPresenting "{random.choice(list(poems.keys()))}" by Aaryan Tawde
-    \n{poems[random.choice(list(poems.keys()))]} 
-    ```
-''')
+
+def output(message):
+    title, poem = random.choice(list(poems.items()))
+    return f'''```\nPresenting "{title}" by Aaryan Tawde\n{poem}```'''
